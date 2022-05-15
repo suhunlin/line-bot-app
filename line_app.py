@@ -37,16 +37,20 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    if event.message.text == '1':
-        msg = '冠儒是笨蛋'
-    elif event.message.text == '2':
-        msg = '書弘是大帥哥'
-    elif event.message.text == '3':
-        msg = '品妤是大美女'
+    msg = event.message.text
+    reply_msg = None
+    if msg == '1':
+        reply_msg = '冠儒是笨蛋!!!'
+    elif msg == '2':
+        reply_msg = '書弘是大帥哥!!!'
+    elif msg == '3':
+        reply_msg = '品妤是大美女!!!'
+    else:
+        reply_msg = '我看不懂你在打什麼，你是笨蛋嗎!!!'
 
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=msg))
+        TextSendMessage(text=reply_msg))
 
 
 if __name__ == "__main__":
