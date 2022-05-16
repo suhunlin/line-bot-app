@@ -39,6 +39,16 @@ def callback():
 def handle_message(event):
     msg = event.message.text
     reply_msg = None
+    if '貼圖' in msg:
+        sticker_message = StickerSendMessage(
+            package_id='1',
+            sticker_id='1'
+        )
+        line_bot_api.reply_message(
+            event.reply_token,
+            sticker_message)
+        return
+        
     if msg == '1':
         reply_msg = '冠儒是笨蛋!!!'
     elif msg == '2':
