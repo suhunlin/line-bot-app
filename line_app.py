@@ -44,26 +44,46 @@ def handle_message(event):
             package_id='446',
             sticker_id='2004'
         )
+        line_bot_api.reply_message(
+            event.reply_token,
+            sticker_message)
+        return
     elif '品妤' in msg:
         sticker_message = StickerSendMessage(
             package_id='789',
             sticker_id='10856'
-        ) 
+        )
+        line_bot_api.reply_message(
+            event.reply_token,
+            sticker_message)
+        return
     elif '冠儒' in msg:
         sticker_message = StickerSendMessage(
             package_id='6632',
             sticker_id='11825377'
         )
+        line_bot_api.reply_message(
+            event.reply_token,
+            sticker_message)
+        return
     elif '麗君' in msg:
         sticker_message = StickerSendMessage(
             package_id='6632',
             sticker_id='11825376'
         )  
-    line_bot_api.reply_message(
-        event.reply_token,
-        sticker_message)
-
-    return
+        line_bot_api.reply_message(
+            event.reply_token,
+            sticker_message)
+        return
+    elif '書弘' in msg:
+        sticker_message = StickerSendMessage(
+            package_id='6632',
+            sticker_id='11825384'
+        )  
+        line_bot_api.reply_message(
+            event.reply_token,
+            sticker_message)
+        return
 
     if msg == '1':
         reply_msg = '冠儒是笨蛋!!!'
