@@ -45,6 +45,8 @@ def handle_message(event):
         reply_msg = '書弘是大帥哥!!!'
     elif msg == '3':
         reply_msg = '品妤是大美女!!!'
+    elif '白痴' in msg or '幹' in msg or '屁' in msg:
+        reply_msg = '有教養一點!不要罵髒話'
     else:
         reply_msg = '我看不懂你在打什麼，你是笨蛋嗎!!!'
 
