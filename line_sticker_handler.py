@@ -33,3 +33,18 @@ class LineStickerHandler:
                 sticker_id='11825384'
             )   
         return sticker_message
+
+    def handle_str_form_text_message(self):
+        reply_msg = None
+        if self.msg == '1':
+            reply_msg = '冠儒是笨蛋!!!'
+        elif self.msg == '2':
+            reply_msg = '書弘是大帥哥!!!'
+        elif msg == '3':
+            reply_msg = '品妤是大美女!!!'
+        elif msg in ['幹','白痴','屁','媽的']:
+            reply_msg = '有教養一點!不要罵髒話'
+        else:
+            reply_msg = '我看不懂你在打什麼，你是笨蛋嗎!!!'
+        return reply_msg
+
