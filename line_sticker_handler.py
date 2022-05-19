@@ -40,9 +40,9 @@ class LineStickerHandler:
             reply_msg = '冠儒是笨蛋!!!'
         elif self.msg == '2':
             reply_msg = '書弘是大帥哥!!!'
-        elif msg == '3':
+        elif self.msg == '3':
             reply_msg = '品妤是大美女!!!'
-        elif msg in ['幹','白痴','屁','媽的']:
+        elif self.msg in ['幹','白痴','屁','媽的']:
             reply_msg = '有教養一點!不要罵髒話'
         else:
             reply_msg = '我看不懂你在打什麼，你是笨蛋嗎!!!'
