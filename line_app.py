@@ -41,7 +41,7 @@ def handle_message(event):
     msg = event.message.text
     reply_msg = None
     line_sticker_message_handler = LineStickerHandler(msg)
-    if line_sticker_message_handler.handle_sticker_from_text_message != None:
+    if line_sticker_message_handler.handle_sticker_from_text_message() != None:
         line_bot_api.reply_message(
             event.reply_token,
             line_sticker_message_handler.handle_sticker_from_text_message)
