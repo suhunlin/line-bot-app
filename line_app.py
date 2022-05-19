@@ -39,17 +39,17 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     msg = event.message.text
-    reply_msg = None
     line_sticker_message_handler = LineStickerHandler(msg)
+    reply_msg = line_sticker_message_handler.handle_str_form_text_message()
+    sticker_message = line_sticker_message_handler.handle_sticker_from_text_message()
 
     if line_sticker_message_handler.handle_sticker_from_text_message() != None:
         line_bot_api.reply_message(
-            event.reply_token,
-            line_sticker_message_handler.handle_sticker_from_text_message())
+            event.reply_token,sticker_message)
     else:
         line_bot_api.reply_message(
             event.reply_token,
-            TextSendMessage(text=line_sticker_message_handler.handle_str_form_text_message()))
+            TextSendMessage(text=reply_msg))
 
     # line_bot_api.reply_message(
     #     event.reply_token,
