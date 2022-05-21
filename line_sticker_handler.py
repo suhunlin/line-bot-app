@@ -58,7 +58,7 @@ class LineStickerHandler:
                 line_file_system.data_input_name = False
                 reply_msg = '請輸入電話：'
                 line_file_system.data_input_phone_number = True
-                print('---set data_input_phone_number:',line_file_system.data_input_phone_numbe)
+                print('---set data_input_phone_number:',line_file_system.data_input_phone_number)
             elif line_file_system.data_input_phone_number:
                 line_file_system.phone_number = self.msg
                 line_file_system.datas = line_file_system.read_file()
