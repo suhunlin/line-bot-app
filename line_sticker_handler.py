@@ -37,6 +37,7 @@ class LineStickerHandler:
 
     def handle_str_form_text_message(self):
         reply_msg = None
+        print('data_input_name:',line_file_system.data_input_name,'data_input_phone_number:',line_file_system.data_input_phone_number)
         if self.msg == '1':
             reply_msg = '冠儒是笨蛋!!!'
         elif self.msg == '2':
