@@ -46,9 +46,24 @@ class LineStickerHandler:
         elif self.msg == '4':
             line_file_system.data_input_name = True
             reply_msg = '請輸入姓名：'
+        elif self.msg == '5':
+            line_file_system.datas = ine_file_system.read_file
+            reply_msg = line_file_system.datas
         elif self.msg in ['幹','白痴','屁','媽的']:
             reply_msg = '有教養一點!不要罵髒話'
         else:
-            reply_msg = '我看不懂你在打什麼，你是笨蛋嗎!!!'
+            if line_file_system.data_input_name:
+                line_file_system.name = self.msg
+                line_file_system.data_input_name = False
+                reply_msg = '請輸入電話：'
+                line_file_system.data_input_phone_number = True
+            elif line_file_system.data_input_phone_number:
+                line_file_system.phone_number = self.msg
+                line_file_system.datas = line_file_system.read_file()
+                line_file_system.datas.append([line_file_system.name,line_file_system.phone_number])
+                line_file_system.write_file()
+                line_file_system.data_input_phone_number = False
+            else:
+                reply_msg = '我看不懂你在打什麼，你是笨蛋嗎!!!'
         return reply_msg
 
