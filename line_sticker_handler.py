@@ -1,6 +1,7 @@
 from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage,StickerMessage,StickerSendMessage,
 )
+from line_file_handler import line_file_system
 class LineStickerHandler:
     def __init__(self,msg):
         self.msg = msg
@@ -42,6 +43,9 @@ class LineStickerHandler:
             reply_msg = '書弘是大帥哥!!!'
         elif self.msg == '3':
             reply_msg = '品妤是大美女!!!'
+        elif self.msg == '4':
+            line_file_system.data_input_name = True
+            reply_msg = '請輸入姓名：'
         elif self.msg in ['幹','白痴','屁','媽的']:
             reply_msg = '有教養一點!不要罵髒話'
         else:
