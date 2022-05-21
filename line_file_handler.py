@@ -28,4 +28,3 @@ class LineFileSystem:
             print(error_message)
 
 line_file_system = LineFileSystem(filename = 'line_data.txt')
-print('****create line_file_system*****')
