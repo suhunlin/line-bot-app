@@ -21,7 +21,7 @@ class LineFileSystem:
         str = ''
         try:
             with open(self.filename,'w', encoding = 'utf-8-sig') as file:
-                for data in datas:
+                for data in self.datas:
                     str = data[0] + '' + data[1] + '\n'
                     file.write(str)
         except Exception as error_message:
