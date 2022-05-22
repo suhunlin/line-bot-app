@@ -45,6 +45,8 @@ class LineStickerHandler:
             reply_msg = '品妤是大美女!!!'
         elif self.msg in ['幹','白痴','屁','媽的']:
             reply_msg = '有教養一點!不要罵髒話'
+        elif self.msg in ['愛']：
+            reply_msg = '我也愛你'
         else:
             reply_msg = '我看不懂你在打什麼，你是笨蛋嗎!!!'
         return reply_msg
